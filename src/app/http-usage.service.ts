@@ -30,7 +30,7 @@ export class HttpUsageService {
   }
   public getUsageWithFullResponse() {
     this.http.get<Post>(this.url, {observe: 'response'}).subscribe(res => {
-      this.Auth = res.headers.get('auth-O');
+      this.Auth = res.headers.get('Authorization');
       this.postTitle = res.body.title;
     });
   }
